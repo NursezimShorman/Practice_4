@@ -1,11 +1,19 @@
 import re
 
-text = "cat dog"
-pattern = r"cat"
+text = open("raw.txt").read()
 
-print(re.search(pattern, text))
+prices = re.findall(r'\d[\d ]*,\d{2}', text)
+prices = [float(p.replace(' ', '').replace(',', '.')) for p in prices]
 
-#2
-path = r"C:\Users\Name\Documents"
-print(path)
+date = re.search(r'\d{2}\.\d{2}\.\d{4}', text)
+time = re.search(r'\d{2}:\d{2}:\d{2}', text)
+total = re.search(r'ИТОГО:\s*\n?([\d ]+,\d{2})', text)
+payment = re.search(r'Банковская карта|Наличные|Card|Cash', text)
+
+print("Prices:", prices)
+print("Total sum:", sum(prices))
+print("Receipt total:", total.group(1) if total else "")
+print("Date:", date.group() if date else "")
+print("Time:", time.group() if time else "")
+print("Payment:", payment.group() if payment else ""))
 
