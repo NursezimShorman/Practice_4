@@ -1,4 +1,3 @@
-```python
 #1
 import re
 s=input()
@@ -48,4 +47,4 @@ print(re.sub(r'([A-Z])',r' \1',s).strip())
 import re
 s=input()
 print(re.sub(r'([A-Z])',r'_\1',s).lower())
-```
+
