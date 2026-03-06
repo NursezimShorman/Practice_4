@@ -1,0 +1,11 @@
+import re
+
+text = "cat dog"
+pattern = r"cat"
+
+print(re.search(pattern, text))
+
+#2
+path = r"C:\Users\Name\Documents"
+print(path)
+
