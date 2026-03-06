@@ -1,14 +1,51 @@
+```python
+#1
 import re
+s=input()
+print(bool(re.fullmatch(r'ab*',s)))
 
-text = open("raw.txt").read()
+#2
+import re
+s=input()
+print(bool(re.fullmatch(r'ab{2,3}',s)))
 
-prices = re.findall(r"\d+\.\d{2}", text)
-date = re.search(r"\d{2}/\d{2}/\d{4}", text)
-time = re.search(r"\d{2}:\d{2}", text)
-payment = re.search(r"Cash|Card", text)
+#3
+import re
+s=input()
+print(re.findall(r'[a-z]+_[a-z]+',s))
 
-print("Prices:", prices)
-print("Total:", sum(float(p) for p in prices))
-print("Date:", date.group() if date else "")
-print("Time:", time.group() if time else "")
-print("Payment:", payment.group() if payment else "")
+#4
+import re
+s=input()
+print(re.findall(r'[A-Z][a-z]+',s))
+
+#5
+import re
+s=input()
+print(bool(re.fullmatch(r'a.*b',s)))
+
+#6
+import re
+s=input()
+print(re.sub(r'[ ,.]',':',s))
+
+#7
+import re
+s=input()
+print(re.sub(r'_([a-z])',lambda x:x.group(1).upper(),s))
+
+#8
+import re
+s=input()
+print(re.split(r'(?=[A-Z])',s))
+
+#9
+import re
+s=input()
+print(re.sub(r'([A-Z])',r' \1',s).strip())
+
+#10
+import re
+s=input()
+print(re.sub(r'([A-Z])',r'_\1',s).lower())
+```
